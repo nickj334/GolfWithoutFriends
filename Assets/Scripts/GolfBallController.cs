@@ -6,9 +6,10 @@ public class GolfBallController : MonoBehaviour
     public Transform aimPivot; // Aiming reference
     public float aimSpeed = 90f; // Degrees per second
     public float power = 0f;
-    public float maxPower = 40f;
+    public float maxPower = 60f;
     public float powerChargeSpeed = 15f;
     public Slider powerMeter; // UI element to show power
+    public GameObject aimArrow; // Reference to the visual arrow
 
     private Rigidbody rb;
     private bool hasShot = false;
@@ -48,18 +49,37 @@ public class GolfBallController : MonoBehaviour
     {
         rb.AddForce(aimPivot.forward * power, ForceMode.Impulse);
         hasShot = true;
+
+        if (aimArrow != null)
+        {   
+        aimArrow.SetActive(false); // 🔥 Hide the arrow when moving
+        }
     }
 
     void FixedUpdate()
+{   
+    if (hasShot)
     {
-        if (hasShot && rb.linearVelocity.magnitude < 0.1f)
+        // Friction logic if you have it...
+
+        if (rb.linearVelocity.magnitude < 0.1f)
         {
             hasShot = false;
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            power = 0f; // Reset power after shot
+            power = 0f;
+
+            if (aimArrow != null)
+            {   
+                aimArrow.SetActive(true); // 🔥 Show the arrow when ready to aim again
+            }
+
+            // 💥 ADD THIS TO RESET AIM DIRECTION:
+            aimPivot.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
         }
     }
+}
+
 
     void OnCollisionEnter(Collision collision)
     {
