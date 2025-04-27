@@ -21,7 +21,7 @@ public class GolfBallController : MonoBehaviour
 
     void Update()
     {
-        if (hasShot) return; // Prevent aiming after shot
+        if (hasShot) return; // Prevent aiming while ball is moving
 
         // Aiming left/right (A/D keys)
         float aimInput = Input.GetAxisRaw("Horizontal");
@@ -32,7 +32,7 @@ public class GolfBallController : MonoBehaviour
         power += powerInput * powerChargeSpeed * Time.deltaTime;
         power = Mathf.Clamp(power, 0, maxPower);
 
-        // Update the power meter
+        // Update the power meter UI
         if (powerMeter != null)
         {
             powerMeter.value = power / maxPower;
@@ -45,41 +45,58 @@ public class GolfBallController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        // Always follow ball position
+        aimPivot.position = transform.position;
+
+        if (rb.linearVelocity.magnitude > 0.1f)
+        {
+            if (aimArrow != null && aimArrow.activeSelf)
+            {
+                aimArrow.SetActive(false); // Hide arrow whenever ball is moving
+            }
+        }
+
+        if (hasShot)
+        {
+            if (rb.linearVelocity.magnitude < 0.1f)
+            {
+                hasShot = false;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                power = 0f;
+
+                if (aimArrow != null)
+                {
+                    aimArrow.SetActive(true); // Show arrow when ball stops
+                }
+
+                ResetAimPivotRotation();
+            }
+        }
+    }
+
+
     void Shoot()
     {
         rb.AddForce(aimPivot.forward * power, ForceMode.Impulse);
         hasShot = true;
 
         if (aimArrow != null)
-        {   
-        aimArrow.SetActive(false); // 🔥 Hide the arrow when moving
-        }
-    }
-
-    void FixedUpdate()
-{   
-    if (hasShot)
-    {
-        // Friction logic if you have it...
-
-        if (rb.linearVelocity.magnitude < 0.1f)
         {
-            hasShot = false;
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            power = 0f;
-
-            if (aimArrow != null)
-            {   
-                aimArrow.SetActive(true); // 🔥 Show the arrow when ready to aim again
-            }
-
-            // 💥 ADD THIS TO RESET AIM DIRECTION:
-            aimPivot.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+            aimArrow.SetActive(false); // Hide the arrow during movement
         }
-    }
-}
 
+        ResetAimPivotRotation();
+    }
+
+    void ResetAimPivotRotation()
+    {
+        // Flatten the aimPivot's rotation
+        Vector3 flatForward = Vector3.ProjectOnPlane(aimPivot.forward, Vector3.up).normalized;
+        aimPivot.rotation = Quaternion.LookRotation(flatForward, Vector3.up);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
