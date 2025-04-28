@@ -17,18 +17,21 @@ public class HoleInfoUI : MonoBehaviour
         UpdateHoleInfoDisplay();
     }
 
+    // shout counter
     public void IncrementShot()
     {
         shotCount++;
         UpdateHoleInfoDisplay();
     }
 
+    // reset after ball is in the cup
     public void ResetShots()
     {
         shotCount = 0;
         UpdateHoleInfoDisplay();
     }
 
+    // updating UI display
     private void UpdateHoleInfoDisplay()
     {
         holeNumberText.text = "Hole " + currentHole;

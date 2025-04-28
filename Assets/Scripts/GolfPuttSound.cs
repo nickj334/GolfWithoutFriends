@@ -19,7 +19,7 @@ public class GolfPuttSound : MonoBehaviour
 
     void Update()
     {
-        // Test play Putt sound with Space key (for quick testing only)
+        // Putt sound with Space key 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayPuttSound();
@@ -76,7 +76,7 @@ public class GolfPuttSound : MonoBehaviour
         }
     }
 
-    // Detect collision with wall (play wall hit sound)
+    // Detect collision with wall
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
