@@ -7,7 +7,7 @@ public class GolfBallController : MonoBehaviour
     public float aimSpeed = 90f; // Degrees per second
     public float power = 0f;
     public float maxPower = 60f;
-    public float powerChargeSpeed = 15f;
+    public float powerChargeSpeed = 30f;
     public Slider powerMeter; // UI element to show power
     public GameObject aimArrow; // Reference to the visual arrow
 
