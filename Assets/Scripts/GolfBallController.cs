@@ -10,6 +10,7 @@ public class GolfBallController : MonoBehaviour
     public float powerChargeSpeed = 30f;
     public Slider powerMeter; // UI element to show power
     public GameObject aimArrow; // Reference to the visual arrow
+    public HoleInfoUI holeInfoUI; // score card upper right
 
     private Rigidbody rb;
     private bool hasShot = false;
@@ -89,6 +90,11 @@ public class GolfBallController : MonoBehaviour
         }
 
         ResetAimPivotRotation();
+
+        if (holeInfoUI != null)
+        {
+            holeInfoUI.IncrementShot();  // Increment shot after shooting
+        }
     }
 
     void ResetAimPivotRotation()

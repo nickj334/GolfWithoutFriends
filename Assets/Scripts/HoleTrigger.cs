@@ -4,8 +4,10 @@ public class HoleTrigger : MonoBehaviour
 {
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
+    public HoleInfoUI holeInfoUI;
     private Vector3 originalPosition;
     private GolfPuttSound golfPuttSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,11 @@ public class HoleTrigger : MonoBehaviour
         {
             ballRb.linearVelocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
+        }
+
+        if (holeInfoUI != null)
+        {
+            holeInfoUI.ResetShots();     
         }
 
         // Log message or trigger any additional logic after ball reset
