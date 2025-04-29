@@ -59,3 +59,10 @@ All of the functionality for rotating the camera via the mouse and arrow keys, a
 In this project, I designed and implemented the full golf ball control system, including aiming, shooting, and movement physics. I developed an intuitive aiming mechanic where the player can rotate the shot direction using the A and D keys, and adjust shot power with the W and S keys, displayed visually through a dynamic power meter UI. I created a realistic ball physics system where the ball launches quickly and slows down naturally due to carefully tuned linear and angular damping, along with collision dampening when hitting walls.
 
 To support clear aiming feedback, I built an independent AimPivot system that follows the ball's position while maintaining a consistent horizontal orientation, ensuring that the aim direction stays parallel to the ground even after the ball spins, bounces, or rolls over uneven terrain. I also designed and implemented a visual Aim Arrow that accurately represents the shot direction, automatically hiding whenever the ball is moving and reappearing when it stops.
+
+
+**Nick Johnson : Level & Environment**
+
+For the Hub level shown in our Proof of Concept build, I created the level and environment. I started with the ground floor which had a trigger placing the ball back to the start position when they came into contact. Next, I created the Prefabs for both the walls and the floors with textures grabbed from the Unity Asset Store in order for easy duplication. With these, I formed the normal route to the hole with a single jump and a 90 degree turn. For the hole, based on time constraints, I had to create a square hole as you can't make any negatives in the 3D Objects in the game. I plan on making a hole in a 3D Modeling Software to use in the rest of the game. 
+
+Once I created the first path, I added another higher skilled jump with a speed boost attached to it for more variability in the level. The Speed boost is a trigger placed on floor of the path that triples the velocity of the ball when a collision is detected. Lastly, I added another texture to the golf ball to make it more realistic.
