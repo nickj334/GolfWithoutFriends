@@ -1,3 +1,18 @@
+# How to play
+Ball Mechanics
+* Use A and D keys to aim ball direction
+* Use W and S keys to charge/decharge ball
+* Use Spacebar to hit the ball with the current charge
+
+Camera Mechanics
+* Use Left/Right arrow keys to rotate camera
+* Drag and hold mouse to free rotate around player
+* Use Up/Down Arrow keys to zoom in/out
+
+Get the ball in the hole with fewest number of strokes!
+
+# Group Member Implementations
+
 **Jason Webster : Audio Engineering and UI Implementation**
 
 Custom Sound Effects
