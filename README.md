@@ -34,3 +34,7 @@ IncrementShot() is called each time the player shoots.\
 ResetShots() is called when the ball is reset after entering the hole.
 
 The score panel updates dynamically based on player interaction, with all text elements updated via the Unity Inspector and hooked directly into the GolfBallController and HoleTrigger scripts.
+
+**Jacob Kolster : Camera Mechanics**
+
+All of the functionality for rotating the camera via the mouse and arrow keys, as well as for zooming it in and out with the up/down arrow keys, is implemented as a camera script component called `CameraController.js`, and located in the `Assets/Scripts` directory. Essentially, the camera has a predefined Vector3 attribute called offset, representing it's default offset from the player. Holding and draggin the mouse horizontally and vertically changes the two variables `yaw` and `pitch`. Each frame, the position of the camera is determined by rotating the default offset by the value of yaw and pitch. Rotating using the right and left arrow keys is implemented similarly by changing the `yaw`. Lastly the zoom is implemented by changing the scale of the default offset vector when receiving inputs from the up/down arrows, with minimum and maximum zoom beign easily implemented with conditional incrementing/decreasing of the scale.
