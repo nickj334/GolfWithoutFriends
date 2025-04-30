@@ -1,9 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections;
 public class HoleTrigger : MonoBehaviour
 {
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
+    public HoleInfoUI holeInfoUI;  // this is for counter
+    private Vector3 originalPosition; // this is for reseting ball position
+    private GolfPuttSound golfPuttSound;  // this is for all sound calls
+
     public HoleInfoUI holeInfoUI;  // this is for counter
     private Vector3 originalPosition; // this is for reseting ball position
     private GolfPuttSound golfPuttSound;  // this is for all sound calls
@@ -14,6 +19,9 @@ public class HoleTrigger : MonoBehaviour
     {
         // Store the original position of the ball at the start of the game
         originalPosition = ball.transform.position;
+
+        // Get the AudioSource component attached to this object
+        golfPuttSound = ball.GetComponent<GolfPuttSound>();
 
         // Get the AudioSource component attached to this object
         golfPuttSound = ball.GetComponent<GolfPuttSound>();
