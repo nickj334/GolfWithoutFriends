@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections;
 using UnityEngine;
 
 public class GroundTrigger : MonoBehaviour
@@ -9,8 +8,7 @@ public class GroundTrigger : MonoBehaviour
     private Vector3 originalPosition;
     public AudioClip inTheCupClip;  // Drag and drop your "ball in cup" sound clip
     private AudioSource audioSource;  // AudioSource component reference
-    public AudioClip inTheCupClip;  // Drag and drop your "ball in cup" sound clip
-    private AudioSource audioSource;  // AudioSource component reference
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +59,6 @@ public class GroundTrigger : MonoBehaviour
             ballRb.angularVelocity = Vector3.zero;
         }
 
-        // Log message or trigger any additional logic after ball reset
-        Debug.Log("Ball reset to original position after 4 second delay.");
         // Log message or trigger any additional logic after ball reset
         Debug.Log("Ball reset to original position after 4 second delay.");
     }
