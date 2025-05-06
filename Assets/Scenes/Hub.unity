@@ -5803,7 +5803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5283084330919755944}
   m_Layer: 0
-  m_Name: golfcupandhole
+  m_Name: GreenandCup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5839,7 +5839,7 @@ GameObject:
   - component: {fileID: 6685483750799377817}
   - component: {fileID: 6685483750799377818}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
