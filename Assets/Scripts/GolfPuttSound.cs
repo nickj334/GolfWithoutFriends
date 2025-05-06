@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class GolfPuttSound : MonoBehaviour
 {
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     [Header("Audio Clips")]
     public AudioClip PuttLevelTwoClip;
-    public AudioClip WoodClip;
-    public AudioClip AlmostHadItClip;
     public AudioClip InTheCupClip;
-    public AudioClip NiceShotClip;
+    public AudioClip WoodClip;
+
+    [Header("Commentary Clips")]
+    public AudioClip[] BallInTheCupClips;
+    public AudioClip[] GroundContactClips;
+    
 
     void Start()
     {
@@ -56,23 +59,21 @@ public class GolfPuttSound : MonoBehaviour
         }
     }
 
-    // Plays "Nice Shot" sound
-    public void NiceShot()
+    public void PlayRandomCupComment()
     {
-        if (audioSource != null && NiceShotClip != null)
+        if (audioSource != null && BallInTheCupClips.Length > 0)
         {
-            audioSource.clip = NiceShotClip;
-            audioSource.Play();
+            int index = Random.Range(0, BallInTheCupClips.Length);
+            audioSource.PlayOneShot(BallInTheCupClips[index]);
         }
     }
 
-    // Plays "Almost Had It" sound
-    public void AlmostHadIt()
+    public void PlayRandomGroundComment()
     {
-        if (audioSource != null && AlmostHadItClip != null)
+        if (audioSource != null && GroundContactClips.Length > 0)
         {
-            audioSource.clip = AlmostHadItClip;
-            audioSource.Play();
+            int index = Random.Range(0, GroundContactClips.Length);
+            audioSource.PlayOneShot(GroundContactClips[index]);
         }
     }
 
