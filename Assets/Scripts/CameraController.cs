@@ -3,21 +3,24 @@ using UnityEngine;
 public class PlayerFollow : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameObject golfBall;
+    private GameObject aimArrow;
     public Transform player;
     public Vector3 offset;          //relational offset from the origin
-    private float rotationDegreee = 1.0f;
-    private Quaternion yRightRotation;
-    private Quaternion yLeftRotation;
     private float sensitivity = 500f;
+    private bool isFree = false;
+    private bool isFreeButtonDown = false;
+    private Vector3 freeForward = Vector3.forward * 12;
+    private Vector3 freeRight = Vector3.right * 12;
 
     private float _yaw = 0.0f;
     private float _pitch = 0.0f;
     //Vector3 towardsPlayer3D;
     void Start()
     {
-        yRightRotation = Quaternion.AngleAxis(rotationDegreee, Vector3.up);
-        yLeftRotation = Quaternion.AngleAxis(-rotationDegreee, Vector3.up);
         transform.position = player.position + offset;
+        golfBall = GameObject.Find("GolfBall");
+        aimArrow = GameObject.Find("aimArrow");
         //towardsPlayer3D = player.position - transform.position;
         //towardsPlayer3D.y = 0.0f;
         //Vector3 towardsPlayer2D = new Vector3(towardsPlayer3D.x, 0.0f, towardsPlayer3D.z)
@@ -30,26 +33,6 @@ public class PlayerFollow : MonoBehaviour
         Quaternion TotalRotation = Quaternion.Euler(_pitch, _yaw, 0f);
         RotateCamera(TotalRotation);
 
-
-        //Only right detected, move right
-        /*if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)) {
-            offset = yRightRotation * offset;   //TODO: This is dependent on framerate
-            //towardsPlayer3D = player.position - transform.position;
-            //towardsPlayer3D.y = 0.0f;
-            //towardsPlayer3D = yLeftRotation * towardsPlayer3D;
-            transform.Rotate(0.0f, rotationDegreee, 0.0f);
-            
-        } 
-        //Only left detected, move left
-        else if (!Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) {
-            offset = yLeftRotation * offset;
-            //towardsPlayer3D = player.position - transform.position;
-            //towardsPlayer3D.y = 0.0f;
-            //towardsPlayer3D = yRightRotation * towardsPlayer3D;
-            transform.Rotate(0.0f, -rotationDegreee, 0.0f);
-        }
-        //Debug.Log(offset);
-        transform.position = player.position + offset;*/
     }
 
     void HandleMouseInputs() {
@@ -60,37 +43,86 @@ public class PlayerFollow : MonoBehaviour
         }
         _yaw += inputDelta.x * sensitivity * Time.deltaTime;
         _pitch -= inputDelta.y * sensitivity * Time.deltaTime;
-        //Right & Down Arrows
+
+        //Bound Mode Controls
+        //Right & Down Arrows (Bound)
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)) {
             _yaw += 0.3f * sensitivity * Time.deltaTime;
         }
         else if (!Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) {
             _yaw -= 0.3f * sensitivity * Time.deltaTime;
         }
-
-        //Up & Down Keys for Rotation
-        /*if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)) {
-            _pitch += 0.3f * sensitivity * Time.deltaTime;
-        } else if (!Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow)) {
-            _pitch -= 0.3f * sensitivity * Time.deltaTime;
-        }*/
-        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)) {
+        //Up & Down Arrow keys (Bound)
+        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !isFree) {
             if (offset.z<-2.0f) {
                 offset.y -= 1f * Time.deltaTime;
                 offset.z += 6f * Time.deltaTime;
             }
-        } else if (!Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow)) {
+        } else if (!Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow) && !isFree) {
             if (-40.0f<offset.z) {
                 offset.y += 1f * Time.deltaTime;
                 offset.z -= 6f * Time.deltaTime;
             }
         }
+
+        //Free Mode Controls
+        //Up & Down Arrow Keys (Free)
+        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && isFree) {
+            _pitch -= 0.1f * sensitivity * Time.deltaTime;
+        } else if (!Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow) && isFree) {
+            _pitch += 0.1f * sensitivity * Time.deltaTime;
+        }
+        // W & S Keys (Free)
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && isFree) {        //TODO: Disable Ball hit script when in free camera mode
+            transform.position = transform.position + Quaternion.Euler(_pitch, _yaw, 0f) * freeForward * 2 *Time.deltaTime;
+        } else if (!Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S) && isFree) {
+            transform.position = transform.position - Quaternion.Euler(_pitch, _yaw, 0f) * freeForward * 2 * Time.deltaTime;
+        }
+        // A & D Keys (free)
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && isFree) {
+            transform.position = transform.position - Quaternion.Euler(_pitch, _yaw, 0f) * freeRight * 2 * Time.deltaTime;
+        } else if (!Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) && isFree) {
+            transform.position = transform.position + Quaternion.Euler(_pitch, _yaw, 0f) * freeRight * 2 * Time.deltaTime;
+        }
+        //Space and SHIFT Keys (free)
+        if (Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && isFree) {
+            transform.position = transform.position + Vector3.up * 12 * Time.deltaTime;
+        } else if (!Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && isFree) {
+            transform.position = transform.position - Vector3.up * 12 * Time.deltaTime;
+        }
+
+        //Go into swap modes on click
+        if (Input.GetKey(KeyCode.F) && !isFreeButtonDown) {
+            isFree = !isFree;
+            Debug.Log(golfBall);
+            golfBall.GetComponent<GolfBallController>().enabled = !isFree; //Disable Scripts using WASD & Arrow Keys (Ball Direction)
+            aimArrow.GetComponent<MeshRenderer>().enabled = !isFree;
+
+
+            isFreeButtonDown = true;
+
+            Debug.Log(isFree);
+        }
+
+        if (!Input.GetKey(KeyCode.F)) {
+            isFreeButtonDown = false;
+        }
+
     }
 
     void RotateCamera(Quaternion rotation) {
-        Vector3 positionOffset = rotation * new Vector3(0,offset.y, offset.z);
-        transform.position = player.position + positionOffset;
+        //Keep Camera bounded when bound
+        if (!isFree) {
+            Vector3 positionOffset = rotation * new Vector3(0,offset.y, offset.z);
+            transform.position = player.position + positionOffset;
+        }
         transform.rotation = rotation;
 
+    }
+
+    void ResetCamera() {        //TODO: Call this when the ball is reset
+        _yaw = 0.0f;
+        _pitch = 0.0f;
+        offset = new Vector3(0.0f, 1.5f, -6.0f);
     }
 }
