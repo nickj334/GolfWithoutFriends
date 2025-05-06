@@ -34,25 +34,25 @@ public class HoleTrigger : MonoBehaviour
 
 
             // Call the next function to hold the ball in the cup for sound to finish
-            StartCoroutine(PlayNiceShotAfterDelay());
+            StartCoroutine(PlayCommentAfterDelay ());
             StartCoroutine(ResetBallWithDelay());
         }
     }
 
-    private IEnumerator PlayNiceShotAfterDelay()
+    private IEnumerator PlayCommentAfterDelay()
     {
-        // Wait 4 seconds for cup sound to finish
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.75f); // Let cup sound finish
 
-        // Play "Nice Shot" sound
-        if (golfPuttSound != null)
+        if (golfPuttSound != null && golfPuttSound.BallInTheCupClips.Length > 0)
         {
-            golfPuttSound.NiceShot();
+            int index = Random.Range(0, golfPuttSound.BallInTheCupClips.Length);
+            AudioClip selectedClip = golfPuttSound.BallInTheCupClips[index];
+
+            golfPuttSound.audioSource.PlayOneShot(selectedClip);
+
+            // Wait for the comment clip to finish before continuing
+            yield return new WaitForSeconds(selectedClip.length);
         }
-
-        // Wait for the Nice Shot sound to finish
-        yield return new WaitForSeconds(golfPuttSound.NiceShotClip.length);
-
     }
 
     private IEnumerator ResetBallWithDelay()

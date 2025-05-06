@@ -6,9 +6,10 @@ public class GroundTrigger : MonoBehaviour
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
     private Vector3 originalPosition;
-    public AudioClip inTheCupClip;  // Drag and drop your "ball in cup" sound clip
-    private AudioSource audioSource;  // AudioSource component reference
+    private GolfPuttSound golfPuttSound;
 
+    //setting flag for ground contact
+    private bool hasTriggered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,23 +19,23 @@ public class GroundTrigger : MonoBehaviour
         Debug.Log("Original position of the ball: " + originalPosition);
 
         // Get the AudioSource component attached to this object
-        audioSource = GetComponent<AudioSource>();
+        golfPuttSound = ball.GetComponent<GolfPuttSound>();
     }
 
     // Event when an object enters the trigger
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object entering the trigger is the ball
-        if (other.CompareTag("Player"))
+        if (!hasTriggered && other.CompareTag("Player"))
         {
-            // Play the cup sound immediately
-            if (audioSource != null && inTheCupClip != null)
+            hasTriggered = true;
+
+            Debug.Log("Ball has hit the ground trigger.");
+
+            if (golfPuttSound != null)
             {
-                audioSource.PlayOneShot(inTheCupClip);
+                golfPuttSound.PlayRandomGroundComment();
             }
 
-            // Call the next function to hold the ball in the cup for sound to finish
-            Debug.Log("Ball has hit the ground trigger.");
             StartCoroutine(ResetBallWithDelay());
         }
     }
@@ -58,6 +59,10 @@ public class GroundTrigger : MonoBehaviour
             ballRb.linearVelocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
         }
+
+
+        // reseting trigger
+        hasTriggered = false;
 
         // Log message or trigger any additional logic after ball reset
         Debug.Log("Ball reset to original position after 4 second delay.");
