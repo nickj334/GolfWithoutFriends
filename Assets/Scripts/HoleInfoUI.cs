@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HoleInfoUI : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class HoleInfoUI : MonoBehaviour
     // updating UI display
     private void UpdateHoleInfoDisplay()
     {
-        holeNumberText.text = "Hole " + currentHole;
+        holeNumberText.text = SceneManager.GetActiveScene().name == "Hub" ? "Practice Hole" : "Hole" + currentHole;
         parText.text = "Par " + par;
         shotCountText.text = "Shots: " + shotCount;
     }
