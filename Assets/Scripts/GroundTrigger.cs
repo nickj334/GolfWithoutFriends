@@ -5,7 +5,6 @@ public class GroundTrigger : MonoBehaviour
 {
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
-    private Vector3 originalPosition;
     public Vector3 lastPosition;
     private GolfPuttSound golfPuttSound;
 
@@ -16,9 +15,8 @@ public class GroundTrigger : MonoBehaviour
     void Start()
     {
         // Store the original position of the ball at the start of the game
-        originalPosition = ball.transform.position;
         lastPosition = ball.transform.position;
-        Debug.Log("Original position of the ball: " + originalPosition);
+        Debug.Log("Original position of the ball: " + lastPosition);
 
         // Get the AudioSource component attached to this object
         golfPuttSound = ball.GetComponent<GolfPuttSound>();

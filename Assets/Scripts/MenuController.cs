@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject helpCanvas;
+    private GolfBallController golfBallScript;
+    private HoleInfoUI holeInfoScript;
+
+    void Start() {
+        golfBallScript = GameObject.Find("GolfBall").GetComponent<GolfBallController>();
+        holeInfoScript = GameObject.Find("HoleInfoUIManager").GetComponent<HoleInfoUI>();
+    }
 
     void Update()
     {
@@ -21,6 +28,11 @@ public class MenuController : MonoBehaviour
     public void LoadHole1()
     {
         SceneManager.LoadScene("Hole1");
+    }
+
+    public void ResetScene() {
+        golfBallScript.ResetBall();
+        holeInfoScript.ResetShots();
     }
 
     public void ExitGame()

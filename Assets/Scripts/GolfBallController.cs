@@ -8,6 +8,7 @@ public class GolfBallController : MonoBehaviour
     public float power = 0f;
     public float maxPower = 60f;
     public float powerChargeSpeed = 30f;
+    public Vector3 originalPosition;
     public Vector3 lastPosition;
     public Slider powerMeter; // UI element to show power
     public GameObject aimArrow; // Reference to the visual arrow
@@ -19,6 +20,7 @@ public class GolfBallController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        originalPosition = transform.position;
         lastPosition = transform.position;  //Set last position to be starting point
     }
 
@@ -106,6 +108,14 @@ public class GolfBallController : MonoBehaviour
         // Flatten the aimPivot's rotation
         Vector3 flatForward = Vector3.ProjectOnPlane(aimPivot.forward, Vector3.up).normalized;
         aimPivot.rotation = Quaternion.LookRotation(flatForward, Vector3.up);
+    }
+
+    public void ResetBall() {
+        rb.position = originalPosition;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        lastPosition = originalPosition;
+
     }
 
     void OnCollisionEnter(Collision collision)
