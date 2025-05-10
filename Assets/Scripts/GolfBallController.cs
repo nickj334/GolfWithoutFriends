@@ -8,6 +8,7 @@ public class GolfBallController : MonoBehaviour
     public float power = 0f;
     public float maxPower = 60f;
     public float powerChargeSpeed = 30f;
+    public Vector3 lastPosition;
     public Slider powerMeter; // UI element to show power
     public GameObject aimArrow; // Reference to the visual arrow
     public HoleInfoUI holeInfoUI; // score card upper right
@@ -18,6 +19,7 @@ public class GolfBallController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        lastPosition = transform.position;  //Set last position to be starting point
     }
 
     void Update()
@@ -51,7 +53,7 @@ public class GolfBallController : MonoBehaviour
         // Always follow ball position
         aimPivot.position = transform.position;
 
-        if (rb.linearVelocity.magnitude > 0.1f)
+        if (rb.linearVelocity.magnitude > 0.5f)
         {
             if (aimArrow != null && aimArrow.activeSelf)
             {
@@ -61,12 +63,14 @@ public class GolfBallController : MonoBehaviour
 
         if (hasShot)
         {
-            if (rb.linearVelocity.magnitude < 0.1f)
+            if (rb.linearVelocity.magnitude < 0.5f)
             {
+                Debug.Log("Last Position: " + transform.position);
                 hasShot = false;
                 rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 power = 0f;
+                lastPosition = transform.position;
 
                 if (aimArrow != null)
                 {

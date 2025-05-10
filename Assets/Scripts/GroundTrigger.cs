@@ -6,6 +6,7 @@ public class GroundTrigger : MonoBehaviour
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
     private Vector3 originalPosition;
+    public Vector3 lastPosition;
     private GolfPuttSound golfPuttSound;
 
     //setting flag for ground contact
@@ -16,6 +17,7 @@ public class GroundTrigger : MonoBehaviour
     {
         // Store the original position of the ball at the start of the game
         originalPosition = ball.transform.position;
+        lastPosition = ball.transform.position;
         Debug.Log("Original position of the ball: " + originalPosition);
 
         // Get the AudioSource component attached to this object
@@ -44,9 +46,10 @@ public class GroundTrigger : MonoBehaviour
     {
         // 4 second wait so sound plays fully
         Debug.Log("Waiting for 4 seconds before resetting the ball...");
+        lastPosition = ball.GetComponent<GolfBallController>().lastPosition; //Immediately get the last position (prevents setting position to ground)
         yield return new WaitForSeconds(4.0f);
 
-        Debug.Log("4 seconds passed. Resetting the ball position to: " + originalPosition);
+        Debug.Log("4 seconds passed. Resetting the ball position to: " + lastPosition);
         // Reset the ball's position to the original starting position
         //ball.transform.position = originalPosition;
         //Debug.Log("Ball's New position: " + ball.transform.position);
@@ -55,7 +58,7 @@ public class GroundTrigger : MonoBehaviour
         Rigidbody ballRb = ball.GetComponent<Rigidbody>();
         if (ballRb != null)
         {
-            ballRb.position = originalPosition; // Use Rigidbody.position to reset the position
+            ballRb.position = lastPosition; // Use Rigidbody.position to reset the position
             ballRb.linearVelocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
         }

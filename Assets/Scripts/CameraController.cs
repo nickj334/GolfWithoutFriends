@@ -96,7 +96,7 @@ public class PlayerFollow : MonoBehaviour
             isFree = !isFree;
             Debug.Log(golfBall);
             golfBall.GetComponent<GolfBallController>().enabled = !isFree; //Disable Scripts using WASD & Arrow Keys (Ball Direction)
-            aimArrow.GetComponent<MeshRenderer>().enabled = !isFree;
+            aimArrow.SetActive(!isFree);
 
 
             isFreeButtonDown = true;
