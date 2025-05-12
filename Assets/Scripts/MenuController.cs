@@ -16,10 +16,10 @@ public class MenuController : MonoBehaviour
 
         helpCanvas.SetActive(true);
         Time.timeScale = 0f;
-        golfBallScript.enabled = false;
+        //golfBallScript.enabled = false;
 
-        Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        //Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         if (golfBallAudio != null)
             golfBallAudio.enabled = false;
@@ -39,10 +39,10 @@ public class MenuController : MonoBehaviour
         helpCanvas.SetActive(isActive);
 
         Time.timeScale = isActive ? 0f : 1f;
-        golfBallScript.enabled = !isActive;
+        //golfBallScript.enabled = !isActive;
 
-        Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
-        rb.constraints = isActive ? RigidbodyConstraints.FreezeAll : RigidbodyConstraints.None;
+        //Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
+        //rb.constraints = isActive ? RigidbodyConstraints.FreezeAll : RigidbodyConstraints.None;
 
         if (golfBallAudio != null)
             golfBallAudio.enabled = !isActive; // Re-enable audio when menu closes
