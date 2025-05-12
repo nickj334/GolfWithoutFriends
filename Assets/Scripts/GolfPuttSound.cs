@@ -8,6 +8,8 @@ public class GolfPuttSound : MonoBehaviour
     public AudioClip PuttLevelTwoClip;
     public AudioClip InTheCupClip;
     public AudioClip WoodClip;
+    public AudioClip MushroomClip;
+    public AudioClip PortalClip;
 
     [Header("Commentary Clips")]
     public AudioClip[] BallInTheCupClips;
@@ -32,6 +34,7 @@ public class GolfPuttSound : MonoBehaviour
     // Plays the putting sound
     public void PlayPuttSound()
     {
+        if (Time.timeScale == 0f) return; // Prevent sound during menu
         if (audioSource != null && PuttLevelTwoClip != null)
         {
             audioSource.clip = PuttLevelTwoClip;
@@ -49,6 +52,21 @@ public class GolfPuttSound : MonoBehaviour
         }
     }
 
+    void PlayMushroomBounceSound()
+    {
+        if (audioSource != null && MushroomClip != null)
+        {
+            audioSource.PlayOneShot(MushroomClip);
+        }
+    }
+    
+    void PlayPortalSound()
+    {
+        if (audioSource != null && PortalClip != null)
+        {
+            audioSource.PlayOneShot(PortalClip);
+        }
+    }
     // Plays sound when ball enters the cup
     public void BallInTheCupSound()
     {
@@ -83,6 +101,14 @@ public class GolfPuttSound : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             WallHitSound();
+        }
+        if (collision.gameObject.CompareTag("Mushroom"))
+        {
+           PlayMushroomBounceSound();
+        }
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            PlayPortalSound();
         }
     }
 }
