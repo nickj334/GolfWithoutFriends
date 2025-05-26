@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3223757736730733916, guid: ff1884bf7efbfd445a9c80fae1162f6f, type: 3}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: StartPracticeHole
         m_Mode: 1
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3223757736730733916, guid: ff1884bf7efbfd445a9c80fae1162f6f, type: 3}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3223757736730733916, guid: ff1884bf7efbfd445a9c80fae1162f6f, type: 3}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: LoadHole1
         m_Mode: 1
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3223757736730733916, guid: ff1884bf7efbfd445a9c80fae1162f6f, type: 3}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ResetScene
         m_Mode: 1
