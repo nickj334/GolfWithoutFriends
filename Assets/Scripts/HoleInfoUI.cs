@@ -17,7 +17,7 @@ public class HoleInfoUI : MonoBehaviour
         {"Hub", ("Practice Hole", 3) },
         {"Hole1", ("Hole 1", 4) },
         {"Hole2", ("Hole 2", 4) },
-        {"Hole3", ("Hole 3", 5) }
+        {"Hole3", ("Hole 3", 7) }
     };
     
 

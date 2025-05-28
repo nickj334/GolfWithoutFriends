@@ -12,6 +12,9 @@ TagManager:
   - Barrel
   - Fence
   - PortalCup
+  - Flippers
+  - Stone
+  - Fireballs
   layers:
   - Default
   - TransparentFX

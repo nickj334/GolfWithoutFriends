@@ -11,6 +11,7 @@ public class GolfPuttSound : MonoBehaviour
     public AudioClip MushroomClip;
     public AudioClip PortalClip;
     public AudioClip OuchClip;
+    public AudioClip StoneDropClip;
 
     [Header("Commentary Clips")]
     public AudioClip[] BallInTheCupClips;
@@ -87,6 +88,15 @@ public class GolfPuttSound : MonoBehaviour
         }
     }
 
+    void PlayStoneSound()
+    {
+        if (audioSource != null && StoneDropClip != null)
+        {
+            audioSource.clip = StoneDropClip;
+            audioSource.Play();
+        }
+    }
+
     // Plays sound when ball enters the cup
     public void BallInTheCupSound()
     {
@@ -137,6 +147,11 @@ public class GolfPuttSound : MonoBehaviour
         if (collision.gameObject.CompareTag("Fence"))
         { 
             WallHitSound();
+        }
+
+        if (collision.gameObject.CompareTag("Stone"))
+        {
+            PlayStoneSound();
         }
     }
     void OnTriggerEnter(Collider other)
