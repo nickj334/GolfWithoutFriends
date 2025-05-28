@@ -11,6 +11,7 @@ TagManager:
   - Cactus
   - Barrel
   - Fence
+  - PortalCup
   layers:
   - Default
   - TransparentFX

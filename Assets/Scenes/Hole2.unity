@@ -2532,6 +2532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: golfcupandhole
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      propertyPath: m_TagString
+      value: PortalCup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2539,6 +2543,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 252359628}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 252359635}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 252359634}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 252359632}
@@ -2632,6 +2642,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
   m_PrefabInstance: {fileID: 252359626}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &252359634
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252359627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5.090803
+  m_Center: {x: -0.017645177, y: 0, z: 0.05861429}
+--- !u!114 &252359635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252359627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b73fdb4ced47547902f53699b5fe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionForce: 10
+  ballTag: Player
 --- !u!1 &269555418
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,6 +10012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: golfcupandhole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      propertyPath: m_TagString
+      value: PortalCup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9974,6 +10023,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1307924103}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1307924110}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1307924109}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1307924107}
@@ -10067,6 +10122,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
   m_PrefabInstance: {fileID: 1307924101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1307924109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307924102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b73fdb4ced47547902f53699b5fe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionForce: 10
+  ballTag: Player
+--- !u!135 &1307924110
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307924102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5.329932
+  m_Center: {x: -0.0000033011804, y: 0, z: 0}
 --- !u!1001 &1313156241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12695,6 +12785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: golfcupandhole (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      propertyPath: m_TagString
+      value: PortalCup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12702,6 +12796,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1725613558}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1725613565}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1725613564}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1725613562}
@@ -12795,6 +12895,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d9bac5f1cb1c7e459c7b587ab35a272, type: 3}
   m_PrefabInstance: {fileID: 1725613556}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1725613564
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725613557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4.872726
+  m_Center: {x: 0.034295596, y: 0, z: 0.07089762}
+--- !u!114 &1725613565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725613557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b73fdb4ced47547902f53699b5fe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionForce: 10
+  ballTag: Player
 --- !u!1001 &1735772951
 PrefabInstance:
   m_ObjectHideFlags: 0
