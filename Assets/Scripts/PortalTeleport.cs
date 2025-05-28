@@ -4,6 +4,8 @@ public class PortalTeleport : MonoBehaviour
 {
     public Transform teleportTarget; // Where the player/ball should be sent
     public string objectTag = "Player"; // The tag of the object allowed to teleport
+    public AudioSource portalSound;
+    public float dropSpeedMultiplier = 1.5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +14,11 @@ public class PortalTeleport : MonoBehaviour
         if (other.CompareTag(objectTag))
         {
             Debug.Log($"Teleporting {other.name} to {teleportTarget.position}");
+
+            if (portalSound != null )
+            {
+                portalSound.Play();
+            }
 
             // Move the object to the target position
             other.transform.position = teleportTarget.position;

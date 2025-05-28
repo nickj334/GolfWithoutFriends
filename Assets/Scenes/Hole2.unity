@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -349,6 +353,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -510,6 +518,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 102329932}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 102329935}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!1 &102329931 stripped
 GameObject:
@@ -551,11 +562,110 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 996778751}
   objectTag: Player
+  portalSound: {fileID: 102329935}
+  dropSpeedMultiplier: 1.5
 --- !u!4 &102329934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
   m_PrefabInstance: {fileID: 102329930}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &102329935
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102329931}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &104010387
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +787,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -840,7 +954,7 @@ GameObject:
   - component: {fileID: 124995430}
   m_Layer: 0
   m_Name: Fence (3)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -987,6 +1101,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1184,6 +1302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -1349,6 +1471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -1505,6 +1631,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1779,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -1851,7 +1985,7 @@ GameObject:
   - component: {fileID: 224282133}
   m_Layer: 0
   m_Name: Fence (5)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1999,6 +2133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2124,6 +2262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -2202,6 +2344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -2271,6 +2417,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -2939,6 +3089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -3145,6 +3299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -3331,6 +3489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -3387,6 +3549,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -3497,6 +3663,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3623,6 +3793,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -3931,6 +4105,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 481069663}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 481069665}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!1 &481069662 stripped
 GameObject:
@@ -3972,6 +4149,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 480744660}
   objectTag: Player
+  portalSound: {fileID: 481069665}
+  dropSpeedMultiplier: 1.5
+--- !u!82 &481069665
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481069662}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 131b99e930e1b7e47ac2278d688adbe5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 131b99e930e1b7e47ac2278d688adbe5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &481963869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4286,6 +4562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4306,6 +4586,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4368,6 +4652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40
@@ -4428,6 +4716,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4672,6 +4964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4692,6 +4988,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4749,6 +5049,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -4938,6 +5242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -5042,6 +5350,7 @@ GameObject:
   - component: {fileID: 675820180}
   - component: {fileID: 675820179}
   - component: {fileID: 675820178}
+  - component: {fileID: 675820183}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5181,6 +5490,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &675820183
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675820177}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: df320a84a6290df4ab086e219d30d16c, type: 3}
+  m_Resource: {fileID: 8300000, guid: df320a84a6290df4ab086e219d30d16c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &693121197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,7 +5705,7 @@ GameObject:
   - component: {fileID: 701703943}
   m_Layer: 0
   m_Name: Fence (8)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5407,6 +5813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -5484,6 +5894,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -5674,6 +6088,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5912,6 +6330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.3
@@ -6009,6 +6431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6025,6 +6451,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -6095,6 +6525,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -6170,6 +6604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.1
@@ -6231,6 +6669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51
@@ -6287,6 +6729,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -6470,6 +6916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59
@@ -6637,7 +7087,7 @@ GameObject:
   - component: {fileID: 879459936}
   m_Layer: 0
   m_Name: Fence (9)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6749,6 +7199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59
@@ -6808,7 +7262,7 @@ GameObject:
   - component: {fileID: 889722847}
   m_Layer: 0
   m_Name: FencePost1
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7062,6 +7516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7192,7 +7650,6 @@ GameObject:
   - component: {fileID: 960634780}
   - component: {fileID: 960634779}
   - component: {fileID: 960634778}
-  - component: {fileID: 960634777}
   - component: {fileID: 960634787}
   m_Layer: 0
   m_Name: GolfBall
@@ -7201,26 +7658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &960634777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960634776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8846330ca72b2c241ac4a0bec58e64a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  PuttLevelTwoClip: {fileID: 0}
-  InTheCupClip: {fileID: 0}
-  WoodClip: {fileID: 0}
-  MushroomClip: {fileID: 0}
-  PortalClip: {fileID: 0}
-  BallInTheCupClips: []
-  GroundContactClips: []
 --- !u!114 &960634778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,6 +7676,7 @@ MonoBehaviour:
   WoodClip: {fileID: 8300000, guid: 3b570cfff6d0aa14c9142285eb1c17ce, type: 3}
   MushroomClip: {fileID: 0}
   PortalClip: {fileID: 0}
+  OuchClip: {fileID: 8300000, guid: abfbf16933da8fc48a08e8003e193379, type: 3}
   BallInTheCupClips:
   - {fileID: 8300000, guid: 4231379f97dca724291c3b7ce1ede14f, type: 3}
   - {fileID: 8300000, guid: b8a375b05ac55774299a1f05c195d857, type: 3}
@@ -7610,6 +8048,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.07, z: 0.04}
   m_Center: {x: -4.656613e-10, y: -0.008620337, z: -0.00884652}
+--- !u!82 &991730126
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991730112}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 028f3ddee4bf3874299dbb66793a6f59, type: 3}
+  m_Resource: {fileID: 8300000, guid: 028f3ddee4bf3874299dbb66793a6f59, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &996778749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7758,6 +8293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 0}
   objectTag: Player
+  portalSound: {fileID: 0}
+  dropSpeedMultiplier: 1.5
 --- !u!1001 &1009041753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8067,6 +8604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -8136,6 +8677,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -8283,6 +8828,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 991730122}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 991730126}
   m_SourcePrefab: {fileID: 100100000, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
 --- !u!1001 &1122273507
 PrefabInstance:
@@ -8335,6 +8883,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8429,6 +8981,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1855362235}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855362239}
   m_SourcePrefab: {fileID: 100100000, guid: ae173c35c6128384e9b015969b1cc5cf, type: 3}
 --- !u!1 &1148759239
 GameObject:
@@ -9091,6 +9646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9524,6 +10083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.3
@@ -9729,6 +10292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9786,6 +10353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9842,6 +10413,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9974,6 +10549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -10030,6 +10609,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -10108,6 +10691,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
@@ -10286,6 +10873,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -10733,7 +11324,7 @@ GameObject:
   - component: {fileID: 1496158441}
   m_Layer: 0
   m_Name: Fence (2)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10843,7 +11434,7 @@ GameObject:
   - component: {fileID: 1521341290}
   m_Layer: 0
   m_Name: FencePost2
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10988,6 +11579,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11154,6 +11749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11173,7 +11772,7 @@ GameObject:
   - component: {fileID: 1567458806}
   m_Layer: 0
   m_Name: Fence (4)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11391,7 +11990,7 @@ GameObject:
   - component: {fileID: 1579192829}
   m_Layer: 0
   m_Name: Fence (1)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11613,6 +12212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.5
@@ -11775,6 +12378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1673695577}
+  - component: {fileID: 1673695578}
   m_Layer: 0
   m_Name: RightTeleport
   m_TagString: Untagged
@@ -11799,6 +12403,103 @@ Transform:
   - {fileID: 1793052302}
   m_Father: {fileID: 136844025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1673695578
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673695576}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1679624259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11810,6 +12511,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -11928,6 +12633,10 @@ PrefabInstance:
     - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
       propertyPath: m_Name
       value: Fence (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12098,6 +12807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.039999995
@@ -12258,6 +12971,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1737573486}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737573488}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!4 &1737573484 stripped
 Transform:
@@ -12304,6 +13020,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 0}
   objectTag: Player
+  portalSound: {fileID: 1737573488}
+  dropSpeedMultiplier: 1.5
+--- !u!82 &1737573488
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737573485}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 03178e84470149244b9071ecdc670008, type: 3}
+  m_Resource: {fileID: 8300000, guid: 03178e84470149244b9071ecdc670008, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1744458254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12406,6 +13221,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1744458256}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1744458259}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!1 &1744458255 stripped
 GameObject:
@@ -12447,11 +13265,110 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 2050322382}
   objectTag: Player
+  portalSound: {fileID: 1744458259}
+  dropSpeedMultiplier: 1.5
 --- !u!4 &1744458258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
   m_PrefabInstance: {fileID: 1744458254}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1744458259
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744458255}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1767275471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12463,6 +13380,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -12542,6 +13463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -12619,6 +13544,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -12808,7 +13737,7 @@ GameObject:
   - component: {fileID: 1786126904}
   m_Layer: 0
   m_Name: Fence (7)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13006,6 +13935,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1793052300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1793052303}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!1 &1793052299 stripped
 GameObject:
@@ -13047,11 +13979,110 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 1737573484}
   objectTag: Player
+  portalSound: {fileID: 1793052303}
+  dropSpeedMultiplier: 1.5
 --- !u!4 &1793052302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
   m_PrefabInstance: {fileID: 1793052298}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1793052303
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793052299}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0ab1dccbf42a0e8488d33bda2fccfc11, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1795464273
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,6 +14240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59
@@ -13265,6 +14300,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -13347,6 +14386,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13467,6 +14510,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.07, z: 0.04}
   m_Center: {x: -4.656613e-10, y: -0.008620337, z: -0.00884652}
+--- !u!82 &1855362239
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855362225}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 028f3ddee4bf3874299dbb66793a6f59, type: 3}
+  m_Resource: {fileID: 8300000, guid: 028f3ddee4bf3874299dbb66793a6f59, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1856835285
 GameObject:
   m_ObjectHideFlags: 0
@@ -13764,7 +14904,7 @@ GameObject:
   - component: {fileID: 1871576504}
   m_Layer: 0
   m_Name: Fence (6)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13872,6 +15012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -13953,6 +15097,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14558,6 +15706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14682,6 +15834,10 @@ PrefabInstance:
     - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_Name
       value: Cactus1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
@@ -14959,6 +16115,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2050322384}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050322386}
   m_SourcePrefab: {fileID: 100100000, guid: f127616a74128d1439f7e1946bf00f2e, type: 3}
 --- !u!4 &2050322382 stripped
 Transform:
@@ -15005,6 +16164,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 0}
   objectTag: Player
+  portalSound: {fileID: 2050322386}
+  dropSpeedMultiplier: 1.5
+--- !u!82 &2050322386
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050322383}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 03178e84470149244b9071ecdc670008, type: 3}
+  m_Resource: {fileID: 8300000, guid: 03178e84470149244b9071ecdc670008, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2052463148
 GameObject:
   m_ObjectHideFlags: 0
@@ -15340,6 +16598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15359,7 +16621,7 @@ GameObject:
   - component: {fileID: 2077173968}
   m_Layer: 0
   m_Name: Fence (10)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15578,6 +16840,10 @@ PrefabInstance:
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
       value: Barrel (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15891,6 +17157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus1
       objectReference: {fileID: 0}
+    - target: {fileID: 243855455089747071, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 588152486701448901, guid: 4a9c914e05f310043b65f16b6b1fbddb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.045
@@ -15966,6 +17236,10 @@ PrefabInstance:
       objectReference: {fileID: 960634776}
     - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
       propertyPath: m_Name
+      value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093466472402817552, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
+      propertyPath: m_TagString
       value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 6907263799194208426, guid: db517653f3ea80246be54e73a9758eaa, type: 3}
@@ -16086,6 +17360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 6726971297773886134, guid: cb75382aaf3522147b90efc4a7fd4b02, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16105,7 +17383,7 @@ GameObject:
   - component: {fileID: 5147230779184113855}
   m_Layer: 0
   m_Name: Fence (29)
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16121,6 +17399,10 @@ PrefabInstance:
     - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_Name
       value: Cactus2
+      objectReference: {fileID: 0}
+    - target: {fileID: 912898094875559905, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 1651661812316134094, guid: 17fec2cea75f04749b9feb2d57579a87, type: 3}
       propertyPath: m_LocalScale.y

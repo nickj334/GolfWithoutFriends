@@ -8,6 +8,9 @@ TagManager:
   - Cup
   - Mushroom
   - Portal
+  - Cactus
+  - Barrel
+  - Fence
   layers:
   - Default
   - TransparentFX

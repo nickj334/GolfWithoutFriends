@@ -10,6 +10,7 @@ public class GolfPuttSound : MonoBehaviour
     public AudioClip WoodClip;
     public AudioClip MushroomClip;
     public AudioClip PortalClip;
+    public AudioClip OuchClip;
 
     [Header("Commentary Clips")]
     public AudioClip[] BallInTheCupClips;
@@ -67,6 +68,25 @@ public class GolfPuttSound : MonoBehaviour
             audioSource.PlayOneShot(PortalClip);
         }
     }
+
+    void PlayCatcusSound()
+    {
+        if (audioSource != null && OuchClip != null)
+        {
+            audioSource.clip = OuchClip;
+            audioSource.Play();
+        }
+    }
+
+    void PlayBarrelSound()
+    {
+        if (audioSource != null && OuchClip != null)
+        {
+            audioSource.clip = OuchClip;
+            audioSource.Play();
+        }
+    }
+
     // Plays sound when ball enters the cup
     public void BallInTheCupSound()
     {
@@ -110,5 +130,21 @@ public class GolfPuttSound : MonoBehaviour
         {
             PlayPortalSound();
         }
+        if (collision.gameObject.CompareTag("Cactus"))
+        {
+            PlayCatcusSound();
+        }
+        if (collision.gameObject.CompareTag("Fence"))
+        { 
+            WallHitSound();
+        }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Barrel"))
+        {
+            PlayBarrelSound();
+        }
+    }
+
 }
