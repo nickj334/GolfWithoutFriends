@@ -60,6 +60,18 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Hole1");
     }
 
+    public void LoadHole2()
+    {
+        Debug.Log("Hole2 button clicked");
+        SceneManager.LoadScene("Hole2");
+    }
+
+    public void LoadHole3()
+    {
+        Debug.Log("Hole3 button clicked");
+        SceneManager.LoadScene("Hole3");
+    }
+
     public void ResetScene() {
         golfBallScript.ResetBall();
         holeInfoScript.ResetShots();

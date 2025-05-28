@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class HoleInfoUI : MonoBehaviour
 {
@@ -8,13 +9,22 @@ public class HoleInfoUI : MonoBehaviour
     public TMP_Text parText;
     public TMP_Text shotCountText;
 
-    private int currentHole = 1;  // Example: Hole 1
+    private string holeName = "Practice Hole"; // setting base hole name
     private int par = 3;          // Example: Par 3
     private int shotCount = 0;    // How many shots
+    private Dictionary<string, (string holeName, int par)> holeData = new Dictionary<string, (string, int)>
+    {
+        {"Hub", ("Practice Hole", 3) },
+        {"Hole1", ("Hole 1", 4) },
+        {"Hole2", ("Hole 2", 4) },
+        {"Hole3", ("Hole 3", 5) }
+    };
+    
 
     void Start()
     {
         shotCount = 0;
+        UpdateHoleInfo();
         UpdateHoleInfoDisplay();
     }
 
@@ -32,13 +42,28 @@ public class HoleInfoUI : MonoBehaviour
         UpdateHoleInfoDisplay();
     }
 
+    private void UpdateHoleInfo()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (holeData.ContainsKey(sceneName))
+        {
+            holeName = holeData[sceneName].holeName;
+            par = holeData[sceneName].par;
+        }
+        else
+        {
+            holeName = "Unknown Hole";
+            par = 3;
+        }
+    }
+
     // updating UI display
     private void UpdateHoleInfoDisplay()
     {
-        holeNumberText.text = SceneManager.GetActiveScene().name == "Hub" ? "Practice Hole" : "Hole" + currentHole;
+        holeNumberText.text = holeName;
         parText.text = "Par " + par;
         shotCountText.text = "Shots: " + shotCount;
     }
 
-    //need to push to main
+ 
 }

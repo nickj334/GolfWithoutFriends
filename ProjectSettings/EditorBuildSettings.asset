@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hole1.unity
     guid: 86777e20b5970b84aaf77953ab8ba820
+  - enabled: 1
+    path: Assets/Scenes/Hole2.unity
+    guid: 715f0d26c810fc84a84e0293c5b08764
+  - enabled: 1
+    path: Assets/Scenes/Hole3.unity
+    guid: 78c3e494102e8074aa02ec812a6c3be2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
