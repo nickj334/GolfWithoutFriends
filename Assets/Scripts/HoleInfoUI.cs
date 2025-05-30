@@ -19,10 +19,20 @@ public class HoleInfoUI : MonoBehaviour
         {"Hole2", ("Hole 2", 4) },
         {"Hole3", ("Hole 3", 7) }
     };
-    
+
 
     void Start()
     {
+        // Auto-assign TextMeshProUGUI references if missing
+        if (holeNumberText == null)
+            holeNumberText = GameObject.Find("HoleNumberText")?.GetComponent<TMP_Text>();
+
+        if (parText == null)
+            parText = GameObject.Find("ParText")?.GetComponent<TMP_Text>();
+
+        if (shotCountText == null)
+            shotCountText = GameObject.Find("ShotCountText")?.GetComponent<TMP_Text>();
+
         shotCount = 0;
         UpdateHoleInfo();
         UpdateHoleInfoDisplay();
@@ -60,10 +70,13 @@ public class HoleInfoUI : MonoBehaviour
     // updating UI display
     private void UpdateHoleInfoDisplay()
     {
+        int strokes = GameManager.Instance.GetScore(GameManager.Instance.currentHoleIndex);
         holeNumberText.text = holeName;
         parText.text = "Par " + par;
-        shotCountText.text = "Shots: " + shotCount;
+        shotCountText.text = "Shots: " + strokes;
     }
 
- 
+
+
+
 }

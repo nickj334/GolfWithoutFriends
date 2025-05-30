@@ -3,50 +3,56 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject helpCanvas;
+    public GameObject helpCanvas_Practice;
+    public GameObject helpCanvas_GameMode;
     private GolfBallController golfBallScript;
     private HoleInfoUI holeInfoScript;
     private AudioSource golfBallAudio;
+    private bool isPracticeMode;
 
     void Start()
     {
-        golfBallScript = GameObject.Find("GolfBall").GetComponent<GolfBallController>();
-        holeInfoScript = GameObject.Find("HoleInfoUIManager").GetComponent<HoleInfoUI>();
-        golfBallAudio = GameObject.Find("GolfBall").GetComponent<AudioSource>();
+        isPracticeMode = GameModeManager.Instance.IsPracticeMode;
 
-        helpCanvas.SetActive(true);
+        golfBallScript = GameObject.Find("GolfBall")?.GetComponent<GolfBallController>();
+        holeInfoScript = GameObject.Find("HoleInfoUIManager")?.GetComponent<HoleInfoUI>();
+        golfBallAudio = GameObject.Find("GolfBall")?.GetComponent<AudioSource>();
+
+        // Just set both off at start
+        if (helpCanvas_Practice != null) helpCanvas_Practice.SetActive(false);
+        if (helpCanvas_GameMode != null) helpCanvas_GameMode.SetActive(false);
+
+        // Now activate the correct one
+        if (isPracticeMode && helpCanvas_Practice != null)
+            helpCanvas_Practice.SetActive(true);
+        else if (!isPracticeMode && helpCanvas_GameMode != null)
+            helpCanvas_GameMode.SetActive(true);
+
         Time.timeScale = 0f;
-        //golfBallScript.enabled = false;
-
-        //Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
-        //rb.constraints = RigidbodyConstraints.FreezeAll;
-
-        if (golfBallAudio != null)
-            golfBallAudio.enabled = false;
+        if (golfBallAudio != null) golfBallAudio.enabled = false;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
+            if (isPracticeMode)
+                ToggleMenu(helpCanvas_Practice);
+            else
+                ToggleMenu(helpCanvas_GameMode);
         }
     }
 
-    void ToggleMenu()
+    void ToggleMenu(GameObject menu)
     {
-        bool isActive = !helpCanvas.activeSelf;
-        helpCanvas.SetActive(isActive);
+        if (menu == null) return;
+
+        bool isActive = !menu.activeSelf;
+        menu.SetActive(isActive);
 
         Time.timeScale = isActive ? 0f : 1f;
-        //golfBallScript.enabled = !isActive;
-
-        //Rigidbody rb = golfBallScript.GetComponent<Rigidbody>();
-        //rb.constraints = isActive ? RigidbodyConstraints.FreezeAll : RigidbodyConstraints.None;
-
         if (golfBallAudio != null)
-            golfBallAudio.enabled = !isActive; // Re-enable audio when menu closes
-
+            golfBallAudio.enabled = !isActive;
     }
 
     public void StartPracticeHole()
