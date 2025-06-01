@@ -3888,7 +3888,7 @@ Transform:
   m_GameObject: {fileID: 623173499}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0.000000014901161, z: 0.000000044703484, w: 0.70710677}
-  m_LocalPosition: {x: 97.544, y: -3.806, z: 1.859}
+  m_LocalPosition: {x: 97.606, y: -3.752, z: 1.867}
   m_LocalScale: {x: 155, y: 159.99997, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3907,7 +3907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 997508503}
-  holeInfoUI: {fileID: 0}
+  holeInfoUI: {fileID: 1017897132}
 --- !u!135 &623173502
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6722,6 +6722,86 @@ PrefabInstance:
     - target: {fileID: 1946980769206097019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
       propertyPath: m_Name
       value: HelpCanvas_GameMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946980769206097019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805908507295974376, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805908507295974376, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066480294775852528, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066480294775852528, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066480294775852528, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066480294775852528, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095155741724515878, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_Name
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095155741724515878, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271261026230815019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_text
+      value: Reset   Current Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271261026230815019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271261026230815019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271261026230815019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271261026230815019, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573216998092718051, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573216998092718051, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573216998092718051, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573216998092718051, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134118941002261378, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134118941002261378, guid: 438d5ef422ab44842a856b9995305e27, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11571,6 +11651,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -270
       objectReference: {fileID: 0}
+    - target: {fileID: 1273398658943598147, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
+      propertyPath: m_text
+      value: Hole 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2892218900535275038, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11657,7 +11741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556917259194487095, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_text
-      value: Hole 2
+      value: Hole 3
       objectReference: {fileID: 0}
     - target: {fileID: 5557081410754652057, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_Name
@@ -11783,6 +11867,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadHole1
       objectReference: {fileID: 0}
+    - target: {fileID: 6792361511298449107, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
+      propertyPath: m_text
+      value: Hole 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7258477773504516957, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11793,7 +11881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7727077072437119893, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_text
-      value: Hole 3
+      value: Hole 4
       objectReference: {fileID: 0}
     - target: {fileID: 8136665612872151050, guid: 75ab313b34075ba42b516ed4e0182465, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

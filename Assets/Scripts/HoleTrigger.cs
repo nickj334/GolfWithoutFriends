@@ -1,23 +1,22 @@
 using UnityEngine;
 using System.Collections;
+
 public class HoleTrigger : MonoBehaviour
 {
     // Reference to the ball's Rigidbody
     public GameObject ball;  // Drag and drop your ball GameObject in the Inspector
-    public HoleInfoUI holeInfoUI;  // this is for counter
-    private Vector3 originalPosition; // this is for reseting ball position
-    private GolfPuttSound golfPuttSound;  // this is for all sound calls
-
+    public HoleInfoUI holeInfoUI;  // Reference to UI for updating shot count
+    private Vector3 originalPosition; // Store the starting position of the ball
+    private GolfPuttSound golfPuttSound;  // For playing sound effects
 
     // Start is called before the first frame update
     void Start()
     {
-        // Store the original position of the ball at the start of the game
+        // Store the original position of the ball
         originalPosition = ball.transform.position;
 
-        // Get the AudioSource component attached to this object
+        // Get the GolfPuttSound component from the ball
         golfPuttSound = ball.GetComponent<GolfPuttSound>();
-
     }
 
     // Event when an object enters the trigger
@@ -26,22 +25,21 @@ public class HoleTrigger : MonoBehaviour
         // Check if the object entering the trigger is the ball
         if (other.CompareTag("Player"))
         {
-            // Play the cup sound immediately
+            // Play the cup sound
             if (golfPuttSound != null)
             {
                 golfPuttSound.BallInTheCupSound();
             }
 
-
-            // Call the next function to hold the ball in the cup for sound to finish
-            StartCoroutine(PlayCommentAfterDelay ());
+            // Start the coroutine for delayed actions
+            StartCoroutine(PlayCommentAfterDelay());
             StartCoroutine(ResetBallWithDelay());
         }
     }
 
     private IEnumerator PlayCommentAfterDelay()
     {
-        yield return new WaitForSeconds(0.75f); // Let cup sound finish
+        yield return new WaitForSeconds(0.75f); // Delay to finish cup sound
 
         if (golfPuttSound != null && golfPuttSound.BallInTheCupClips.Length > 0)
         {
@@ -50,36 +48,47 @@ public class HoleTrigger : MonoBehaviour
 
             golfPuttSound.audioSource.PlayOneShot(selectedClip);
 
-            // Wait for the comment clip to finish before continuing
+            // Wait for the comment clip to finish before proceeding
             yield return new WaitForSeconds(selectedClip.length);
         }
     }
 
     private IEnumerator ResetBallWithDelay()
     {
-        // 4 second wait so sound plays fully
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(4.0f); // Delay to allow sound to finish
 
-        // Reset the ball's position to the original starting position
-        //ball.transform.position = originalPosition;
-
-        // Optionally, reset the ball's velocity to prevent sliding
-        Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-        if (ballRb != null)
+        if (GameModeManager.Instance != null && GameModeManager.Instance.IsPracticeMode)
         {
-            ballRb.position = originalPosition; // Use Rigidbody.position to reset the position
-            ballRb.linearVelocity = Vector3.zero;
-            ballRb.angularVelocity = Vector3.zero;
+            // Practice Mode: reset ball to tee and shot count
+            Rigidbody ballRb = ball.GetComponent<Rigidbody>();
+            if (ballRb != null)
+            {
+                ballRb.position = originalPosition;
+                ballRb.linearVelocity = Vector3.zero;
+                ballRb.angularVelocity = Vector3.zero;
+            }
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.holeScores[GameManager.Instance.currentHoleIndex] = 0;
+            }
+
+            if (holeInfoUI != null)
+            {
+                holeInfoUI.UpdateHoleInfoDisplay();
+            }
+
+            Debug.Log("Practice Mode: Ball reset to tee.");
         }
-
-
-        // counter reset
-        if (holeInfoUI != null)
+        else
         {
-            holeInfoUI.ResetShots();     
-        }
+            // Game Mode: advance to next hole and reset shot count
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AdvanceHole();  // This method handles loading the next scene and resetting score
+            }
 
-        // Log message or trigger any additional logic after ball reset
-        Debug.Log("Ball reset to original position after 4 second delay.");
+            Debug.Log("Game Mode: Advancing to next hole.");
+        }
     }
 }

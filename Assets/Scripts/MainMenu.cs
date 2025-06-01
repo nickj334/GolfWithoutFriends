@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         if (GameModeManager.Instance != null)
         {
             GameModeManager.Instance.IsPracticeMode = false;  // Set Game Mode
-            SceneManager.LoadScene("Hole1");  // Game scene
+            SceneManager.LoadScene("Hub");  // Game scene
         }
         else
         {

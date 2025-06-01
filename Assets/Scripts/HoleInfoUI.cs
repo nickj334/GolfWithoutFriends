@@ -9,15 +9,15 @@ public class HoleInfoUI : MonoBehaviour
     public TMP_Text parText;
     public TMP_Text shotCountText;
 
-    private string holeName = "Practice Hole"; // setting base hole name
+    private string holeName = "Hole 1"; // setting base hole name
     private int par = 3;          // Example: Par 3
     private int shotCount = 0;    // How many shots
     private Dictionary<string, (string holeName, int par)> holeData = new Dictionary<string, (string, int)>
     {
-        {"Hub", ("Practice Hole", 3) },
-        {"Hole1", ("Hole 1", 4) },
-        {"Hole2", ("Hole 2", 4) },
-        {"Hole3", ("Hole 3", 7) }
+        {"Hub", ("Hole 1", 3) },
+        {"Hole1", ("Hole 2", 4) },
+        {"Hole2", ("Hole 3", 4) },
+        {"Hole3", ("Hole 4", 7) }
     };
 
 
@@ -38,10 +38,12 @@ public class HoleInfoUI : MonoBehaviour
         UpdateHoleInfoDisplay();
     }
 
-    // shout counter
     public void IncrementShot()
     {
-        shotCount++;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.RegisterShot();  // Use central tracking
+        }
         UpdateHoleInfoDisplay();
     }
 
@@ -68,7 +70,7 @@ public class HoleInfoUI : MonoBehaviour
     }
 
     // updating UI display
-    private void UpdateHoleInfoDisplay()
+    public void UpdateHoleInfoDisplay()
     {
         int strokes = GameManager.Instance.GetScore(GameManager.Instance.currentHoleIndex);
         holeNumberText.text = holeName;

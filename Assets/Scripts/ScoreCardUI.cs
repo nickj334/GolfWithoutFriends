@@ -1,21 +1,26 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class ScoreCardUI : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public List<TextMeshProUGUI> scoreTexts;  // Assign in inspector
+    public int totalHoles = 4;  // Adjust as needed
 
-    void Update()
+    void Start()
     {
-        if (GameManager.Instance == null) return;
-
-        string display = "Score Card:\n";
-        for (int i = 1; i <= 3; i++)
+        // Initialize score placeholders to "-"
+        for (int i = 0; i < totalHoles; i++)
         {
-            int strokes = GameManager.Instance.GetScore(i);
-            display += $"Hole {i}: {strokes}\n";
+            scoreTexts[i].text = "-";
         }
+    }
 
-        scoreText.text = display;
+    public void UpdateScore(int holeNumber, int strokes)
+    {
+        if (holeNumber < 1 || holeNumber > totalHoles) return;
+
+        // Update the specific hole with stroke count
+        scoreTexts[holeNumber - 1].text = strokes.ToString();
     }
 }

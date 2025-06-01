@@ -18,18 +18,23 @@ public class MenuController : MonoBehaviour
         holeInfoScript = GameObject.Find("HoleInfoUIManager")?.GetComponent<HoleInfoUI>();
         golfBallAudio = GameObject.Find("GolfBall")?.GetComponent<AudioSource>();
 
-        // Just set both off at start
+        // Start both canvases disabled
         if (helpCanvas_Practice != null) helpCanvas_Practice.SetActive(false);
         if (helpCanvas_GameMode != null) helpCanvas_GameMode.SetActive(false);
 
-        // Now activate the correct one
-        if (isPracticeMode && helpCanvas_Practice != null)
-            helpCanvas_Practice.SetActive(true);
-        else if (!isPracticeMode && helpCanvas_GameMode != null)
-            helpCanvas_GameMode.SetActive(true);
-
-        Time.timeScale = 0f;
-        if (golfBallAudio != null) golfBallAudio.enabled = false;
+        if (isPracticeMode)
+        {
+            // Practice Mode: Show Practice Menu on scene load
+            if (helpCanvas_Practice != null) helpCanvas_Practice.SetActive(true);
+            Time.timeScale = 0f;
+            if (golfBallAudio != null) golfBallAudio.enabled = false;
+        }
+        else
+        {
+            // Game Mode: Everything stays hidden and running
+            Time.timeScale = 1f;
+            if (golfBallAudio != null) golfBallAudio.enabled = true;
+        }
     }
 
     void Update()
