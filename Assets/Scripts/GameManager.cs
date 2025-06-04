@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
                 scoreCardUI.gameObject.SetActive(false);  // Hide ScoreCard in MainMenu or other scenes
             }
         }
+
+        // Force correct currentHoleIndex based on scene name
+        int index = System.Array.IndexOf(holeScenes, scene.name);
+        if (index >= 0)
+        {
+            currentHoleIndex = index;
+            Debug.Log("Current hole index set to: " + currentHoleIndex);
+        }
     }
 
     private void OnEnable()

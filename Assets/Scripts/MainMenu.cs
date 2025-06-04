@@ -5,30 +5,51 @@ public class MainMenu : MonoBehaviour
 {
     public void PracticeGame()
     {
-        if (GameModeManager.Instance != null)
+        if (GameModeManager.Instance != null && GameManager.Instance != null)
         {
-            GameModeManager.Instance.IsPracticeMode = true;  // Set Practice Mode
-            SceneManager.LoadScene("Hub");  // Practice scene
+            GameModeManager.Instance.IsPracticeMode = true;
+            GameManager.Instance.ResetGame();  // Reset hole index and scores
+            SceneManager.LoadScene("Hub");
         }
         else
         {
-            Debug.LogError("GameModeManager instance is null. Ensure it exists in the MainMenu scene.");
+            Debug.LogError("Missing GameModeManager or GameManager instance.");
         }
     }
 
     public void PlayGame()
     {
-        if (GameModeManager.Instance != null)
+        if (GameModeManager.Instance != null && GameManager.Instance != null)
         {
-            GameModeManager.Instance.IsPracticeMode = false;  // Set Game Mode
-            SceneManager.LoadScene("Hub");  // Game scene
+            GameModeManager.Instance.IsPracticeMode = false;
+            GameManager.Instance.ResetGame();  // Reset hole index and scores
+            SceneManager.LoadScene("Hub");
         }
         else
         {
-            Debug.LogError("GameModeManager instance is null. Ensure it exists in the MainMenu scene.");
+            Debug.LogError("Missing GameModeManager or GameManager instance.");
         }
     }
 
+    public void ResumeGame()
+    {
+        if (GameModeManager.Instance != null && GameManager.Instance != null)
+        {
+            int resumeIndex = GameManager.Instance.currentHoleIndex;
+            if (resumeIndex >= 0 && resumeIndex < GameManager.Instance.holeScenes.Length)
+            {
+                SceneManager.LoadScene(GameManager.Instance.holeScenes[resumeIndex]);
+            }
+            else
+            {
+                Debug.LogError("Invalid resume scene index.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Missing GameManager or GameModeManager instance.");
+        }
+    }
 
     public void ShowCredits()
     {
