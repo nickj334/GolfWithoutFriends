@@ -19,9 +19,8 @@ public class MenuController : MonoBehaviour
     {
         isPracticeMode = GameModeManager.Instance.IsPracticeMode;
 
-        golfBallScript = GameObject.Find("GolfBall")?.GetComponent<GolfBallController>();
-        holeInfoScript = GameObject.Find("HoleInfoUIManager")?.GetComponent<HoleInfoUI>();
-        golfBallAudio = GameObject.Find("GolfBall")?.GetComponent<AudioSource>();
+        // Always reacquire these references in Start after a scene load
+        RefreshReferences();
 
         // Start both canvases disabled
         if (helpCanvas_Practice != null) helpCanvas_Practice.SetActive(false);
@@ -47,6 +46,14 @@ public class MenuController : MonoBehaviour
             PracticeState.suppressAutoMenu = false;
         }
     }
+
+    void RefreshReferences()
+    {
+        golfBallScript = GameObject.Find("GolfBall")?.GetComponent<GolfBallController>();
+        holeInfoScript = GameObject.Find("HoleInfoUIManager")?.GetComponent<HoleInfoUI>();
+        golfBallAudio = GameObject.Find("GolfBall")?.GetComponent<AudioSource>();
+    }
+
 
     void Update()
     {
@@ -145,34 +152,40 @@ public class MenuController : MonoBehaviour
         {
             int index = GameManager.Instance.currentHoleIndex;
 
-            // Reset stored stroke count
             if (GameManager.Instance.holeScores.ContainsKey(index))
                 GameManager.Instance.holeScores[index] = 0;
 
-            // Update UI display (optional before reload)
             if (holeInfoScript != null)
                 holeInfoScript.UpdateHoleInfoDisplay();
 
-            // Suppress auto-menu if we're about to reload Hub during Practice Mode
+            // Ensure game unpaused and canvas hidden
+            Time.timeScale = 1f;
+            if (golfBallAudio != null) golfBallAudio.enabled = true;
+            if (helpCanvas_GameMode != null) helpCanvas_GameMode.SetActive(false);
+
             if (isPracticeMode && GameManager.Instance.holeScenes[index] == "Hub")
                 PracticeState.suppressAutoMenu = true;
 
-            // Reload the current scene
             string sceneToReload = GameManager.Instance.holeScenes[index];
             SceneManager.LoadScene(sceneToReload);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // fallback
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
 
     public void ResetEntireGame()
     {
         if (GameManager.Instance != null)
         {
             GameManager.Instance.ResetGame();
+
+            // Ensure game unpaused and canvas hidden
+            Time.timeScale = 1f;
+            if (golfBallAudio != null) golfBallAudio.enabled = true;
+            if (helpCanvas_GameMode != null) helpCanvas_GameMode.SetActive(false);
+
             SceneManager.LoadScene("Hub");
         }
     }
