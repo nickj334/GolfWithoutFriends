@@ -15,40 +15,15 @@ Get the ball in the hole with fewest number of strokes!
 
 **Jason Webster : Audio Engineering and UI Implementation**
 
-Custom Sound Effects
-All sound effects used in this project were custom-recorded. I initially attempted to use an external microphone but ultimately recorded all sounds using the iPhone Voice Memos app for simplicity and consistency. I performed and recorded all voice commentary myself. Recordings were imported into Audacity, where I clipped, normalized, and exported each as a WAV file for compatibility with Unity. All sound effects used in the game were original and created specifically for this project. No third-party audio libraries were used.
+As the Audio Engineer for Golf Without Friends, I designed and implemented a fully custom audio system without using any third-party or prebuilt asset packs. All sound effects were recorded using everyday household items such as a putter and ball, metal sheets, plastic cups, tinfoil, rubber bands, and wood then processed in Audacity to match the desired tonal and spatial effect. Commentary lines were self-recorded using VoiceMemo on an iPhone, carefully edited for clarity, timing, and emotional delivery. These sounds were then exported into Unity and integrated through a combination of AudioSource, AudioClip, and AudioMixer components.
+The audio system includes multiple layers of dynamic feedback:
+•	Collision-triggered effects (e.g., wood drops, bell rings, wall bounces) are activated via Unity's OnCollisionEnter and OnTriggerEnter methods, each mapped to context-specific objects like obstacles or goals.
+•	Voice commentaries are triggered upon specific game events, such as successful putts, failed attempts, or idle moments. To avoid repetition and enhance player engagement, a randomization loop was implemented using arrays of clips and Random.Range() to select one clip per event category (e.g., misses, near-misses, hole completions).
+•	Ambient background loops for each hole were layered using low-volume continuous playback of environmental effects such as wind, birds, or lava bubbling, assigned based on scene-specific tags.
+•	Feedback tuning was essential to immersion pitch, gain, reverb, and stereo spread were adjusted in Audacity to distinguish between near/far interactions, indoor/outdoor acoustics, and emotional tone (e.g., sarcastic versus congratulatory lines).
+This sound architecture was built around a core goal: to reinforce player actions with memorable and personalized auditory cues, giving each stroke, bounce, and success its own character.
+In parallel, I also served as the UI Developer, designing and implementing all major interface elements across the game. This included the Main Menu, in-game Help Canvas, dynamic Scorecard (not implemented), and responsive Pause/Reset Menus. The ESC key triggers the active menu, which adapts to game context appearing automatically in Practice Mode hubs or remaining hidden during gameplay unless summoned. A Game Mode Manager prefab ensures mode persistence across scenes, enabling or disabling UI elements like the Scorecard dynamically. Resetting a hole or game restores ball position, state, and score logic while maintaining fluid player control without requiring manual UI actions.
 
-Sound Sources:\
-Cup sound: Real golf ball dropped into a coffee mug.\
-Soft wood impact: Ball rolled into a baseboard.\
-Hard wood impact: Ball dropped onto a wood plank.\
-Metallic (bell) sound: Ball dropped onto an upside-down cooking pot.\
-Glass impact: Ball rolled into a glass bottle.\
-Putting stroke: Recorded using a real golf ball and putter.
-
-Audio Integration
-All WAV files were imported into Unity and attached to appropriate game objects using AudioSource components. The GolfPuttSound script was written to manage playback. This script includes methods for playing specific clips based on in-game triggers and collisions, such as:
-PlayPuttSound()
-BallInTheCupSound()
-NiceShot()
-WallHitSound()
-AlmostHadIt()
-
-Sounds are triggered through Unity’s event system, including collision detection and trigger zones. Audio playback is handled independently to allow overlapping clips where needed.
-
-UI Implementation and Shot Counter
-I implemented a real-time score panel UI in the top-right corner of the screen using Unity's Canvas system and TextMeshPro.
-
-This panel displays:\
-Current hole number\
-Par value\
-Number of shots taken
-
-The HoleInfoUI script manages the score panel and includes the following functionality:\
-IncrementShot() is called each time the player shoots.\
-ResetShots() is called when the ball is reset after entering the hole.
-
-The score panel updates dynamically based on player interaction, with all text elements updated via the Unity Inspector and hooked directly into the GolfBallController and HoleTrigger scripts.
 
 **Jacob Kolster : Camera Mechanics**
 
